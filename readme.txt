@@ -4,16 +4,16 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: hide, tags, tag, extension
 Requires at least: 2.*
 Tested up to: 2.7 RC1
-Version: 1.0
+Version: 2.0
 Stable Tag: trunk
 
-Adds a [hide]xxx[/hide] tag to your wordpress blog! Use it if you want to hide text until the user presses the button.
+Adds a [hide]xxx[/hide] tag to your wordpress blog! Use it if you want to hide text until the user presses the button. You can edit the style via the 7hide Admin Section
 == Description ==
 
 Latest Version available @ www.7-layers.at
 
 Adds a [hide]xxx[/hide] tag to your wordpress blog! Use it if you want to hide text until the user presses the button.
-You can easily set the Style of the Hide thingy with the css in the 7hide.php
+You can easily set the styling of this via the 7hide admin section in wordpress, which is automatically added when activating the plugin
 
 
 == Installation ==
@@ -34,3 +34,4 @@ Contact me - flipace@thn.at (MSN) || 412 133 173 (ICQ) || support@7-layers.at (M
 == Screenshots ==
 
 1. The Standard Look of the hidden thing.
+2. The Admin CP of 7hide
