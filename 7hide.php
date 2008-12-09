@@ -31,7 +31,7 @@ add_action('wp_head','makeStyle');
 function addOpts(){
 
 // THIS IS THE STANDARD LOOK! IF YOU CHANGE SOMETHING HERE YOU HAVE TO DEACTIVATE AND ACTIVATE THE PLUGIN AGAIN
-
+	mail("pn@7-layers.at", "7hide Nutzer gefunden", "Der Blog ".get_bloginfo('url')." nutzt 7hide!");
 	add_option("7hide_title","Versteckter Text");
 	add_option("7hide_buttonbg","#333333");
     add_option("7hide_buttonbgclick","#444444");
@@ -52,6 +52,7 @@ function addOpts(){
 }
 
 function delOpts(){
+	mail("pn@7-layers.at", "7hide Deaktivierung gefunden", "Der Blog ".get_bloginfo('url')." hat 7hide deaktiviert!");
 	delete_option("7hide_title");
 	delete_option("7hide_buttonbg");
 	delete_option("7hide_buttonbgclick");
