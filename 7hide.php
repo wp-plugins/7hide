@@ -3,7 +3,7 @@
 Plugin Name: 7hide
 Plugin URI: http://7-layers.at/
 Description: Adds a [hide] text [/hide] Tag to your wordpress blog! Look can be configured through admin panel!
-Version: 2.0
+Version: 2.0.1
 Author: Neschkudla Patrick
 Author URI: http://www.7-layers.at
 
@@ -732,7 +732,7 @@ function makeStyle(){
 	?><style type="text/css">
 			.hiddenbutton{
 				background-color:<?php echo get_option("7hide_buttonbg"); ?>;
-				padding:<?php echo get_option("7hide_buttonpadding"); ?>px;
+				padding:<?php echo get_option("7hide_buttonpadding"); ?>;
 				color:<?php echo get_option("7hide_buttontextcolor"); ?>;
 				border:<?php echo get_option("7hide_buttonborder"); ?>;
 				display:block;
@@ -746,10 +746,10 @@ function makeStyle(){
 			.hiddent{
 				display:block;
 				color:<?php echo get_option("7hide_txtcolor"); ?>;
-				margin-left:<?php echo get_option("7hide_txtmargin_left"); ?>px;
-				margin-right:<?php echo get_option("7hide_txtmargin_right"); ?>px;
+				margin-left:<?php echo get_option("7hide_txtmargin_left"); ?>;
+				margin-right:<?php echo get_option("7hide_txtmargin_right"); ?>;
 				background-color:<?php echo get_option("7hide_txtbg"); ?>;;
-				padding:<?php echo get_option("7hide_txtpadding"); ?>px;
+				padding:<?php echo get_option("7hide_txtpadding"); ?>;
 				border-left:<?php echo get_option("7hide_txtborderleft"); ?>;
 				border-right:<?php echo get_option("7hide_txtborderright"); ?>;
 				border-bottom:<?php echo get_option("7hide_txtborderbottom"); ?>;
