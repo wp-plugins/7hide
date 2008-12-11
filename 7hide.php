@@ -2,8 +2,8 @@
 /*
 Plugin Name: 7hide
 Plugin URI: http://7-layers.at/
-Description: Adds a [hide] text [/hide] Tag to your wordpress blog! Look can be configured through admin panel!
-Version: 2.0.1
+Description: Adds a [hide] text [/hide] Tag to your wordpress blog! Look can be configured through admin panel! ex. [hide title="The hidden Text"]ehfwe[/hide]
+Version: 2.1
 Author: Neschkudla Patrick
 Author URI: http://www.7-layers.at
 
@@ -542,7 +542,7 @@ function ColorPicker() {
 		<form method="post">
 			<table>
 				<tr>
-					<td class="lefttd">Button Text</td><td><input name="button_title" type="text" value="<?php echo get_option("7hide_title"); ?>" onkeyup="setNewThingClass('hiddenbutton').firstChild.nodeValue=this.value;" /> </td><td class="righttd">This is the text on the "Hidden Text" Button</td>
+					<td class="lefttd">Button Text</td><td><input name="button_title" type="text" value="<?php echo get_option("7hide_title"); ?>" onkeyup="setNewThingClass('hiddenbutton').firstChild.nodeValue=this.value;" /> </td><td class="righttd">This is the text on the "Hidden Text" Button if you don't set the title attribute</td>
 				</tr>
 				<tr>
 					<td class="lefttd">Button Background</td><td align="center"><input type="text" name="buttonbg" size="7" maxlength="7" value="<?php echo get_option("7hide_buttonbg"); ?>" onkeyup="setNewThingClass('hiddenbutton').style.backgroundColor=this.value;" /><a href="#" onClick="cp.select(document.getElementsByName('buttonbg')[0],'pick');return false;" name="pick" id="pick">Pick</a></td><td class="righttd">This is the background color of the "Hidden Text" Button</td>
@@ -759,15 +759,22 @@ function makeStyle(){
 }
 
 
-function makeHidden($atts, $content=null){
+function makeHidden($attr, $content=null){
 	
 	$hide_title = get_option("7hide_title");
 	$bclick = get_option("7hide_buttonbgclick");
 	$b = get_option("7hide_buttonbg");
+	
+    foreach ($attr as $value) {
+     	    return '<span class="hiddenb" onselectstart="return false;"
+    		onmousedown="this.style.backgroundColor=\''.$bclick.'\';if (typeof event.preventDefault != \'undefined\') {event.preventDefault();}" 
+    		onclick="if(this.style.visibility!=\'visible\'){this.style.visibility=\'visible\';this.childNodes[\'1\'].style.display=\'block\';} else{this.style.visibility=\'hidden\';this.childNodes[\'1\'].style.display=\'none\';};" ><span class="hiddenbutton" onmouseup="this.style.backgroundColor=\''.$b.'\'" onmousedown="this.style.backgroundColor=\''.$bclick.'\'">'.$value.'</span><span name="txt" style="display:none;" class="hiddent">'. $content . '</span>
+    		</span>';   
+    }
     return '<span class="hiddenb" onselectstart="return false;"
     		onmousedown="this.style.backgroundColor=\''.$bclick.'\';if (typeof event.preventDefault != \'undefined\') {event.preventDefault();}" 
     		onclick="if(this.style.visibility!=\'visible\'){this.style.visibility=\'visible\';this.childNodes[\'1\'].style.display=\'block\';} else{this.style.visibility=\'hidden\';this.childNodes[\'1\'].style.display=\'none\';};" ><span class="hiddenbutton" onmouseup="this.style.backgroundColor=\''.$b.'\'" onmousedown="this.style.backgroundColor=\''.$bclick.'\'">'.$hide_title.'</span><span name="txt" style="display:none;" class="hiddent">'. $content . '</span>
-    		</span>';
+    		</span>'; 
 }
 
 ?>
